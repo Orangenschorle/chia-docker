@@ -9,8 +9,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
 
 WORKDIR /chia-blockchain
 
-RUN echo "cloning ${BRANCH}" && \
-    git clone --branch ${BRANCH} --recurse-submodules=mozilla-ca https://github.com/Chia-Network/chia-blockchain.git . && \
+RUN echo "cloning $main" && \
+    git clone --branch $main --recurse-submodules=mozilla-ca https://github.com/Chia-Network/chia-blockchain.git . && \
     echo "running build-script" && \
     /bin/sh ./install.sh
 
